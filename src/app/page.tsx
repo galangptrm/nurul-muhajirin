@@ -40,19 +40,19 @@ export default async function HomePage() {
           muted 
           className="absolute inset-0 h-full w-full object-cover opacity-40 mix-blend-overlay"
         >
-          <source src="/mosque-banner.mp4" type="video/mp4" />
+          <source src={`/videos/masjid_tiny.mp4`} type="video/mp4"/>
         </video>
         <div className="absolute inset-0 flex items-center max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-2xl mt-20">
             <p className="text-[#eab308] tracking-widest text-sm font-semibold mb-4 uppercase">
-              — The National Pride of Indonesia
+              — DKM Al Muhajirin
             </p>
             <h1 className="text-5xl md:text-7xl font-serif font-bold text-white mb-4 leading-tight">
-              Masjid Name <br />
-              <span className="text-[#5eead4]">Menyinari Negeri,</span> <span className="text-[#eab308]">Menjaga Harmoni.</span>
+              Yayasan <br />
+              <span className="text-[#5eead4]">Nurul Muhajirin,</span> <span className="text-[#eab308]">Wahana Pondok Gede.</span>
             </h1>
             <p className="text-lg text-gray-200 mb-8 leading-relaxed">
-              Selamat datang di Masjid Name, pusat moderasi beragama di jantung kota. Merajut ukhuwah, menebar kedamaian untuk seluruh alam.
+              Selamat datang di Masjid Al Muhajirin, pusat moderasi beragama di Perum Wahana Pondok Gede. Merajut ukhuwah, menebar kedamaian untuk seluruh alam.
             </p>
             <Link href="#services" className="inline-flex items-center bg-[#0d9488] hover:bg-[#0f766e] text-white px-8 py-3 rounded-full font-semibold transition-colors">
               Eksplorasi Layanan <span className="ml-2">→</span>
@@ -71,10 +71,10 @@ export default async function HomePage() {
         </div>
         
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
-          {[1, 2, 3, 4].map((item) => (
+          {[5, 4, 3, 2].map((item, i) => (
             <div key={item} className="group relative aspect-[9/16] bg-gray-900 rounded-2xl overflow-hidden cursor-pointer shadow-lg">
               {/* Image Placeholder */}
-              <img src={`/placeholder-reel-${item}.jpg`} alt="Reel" className="absolute inset-0 h-full w-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-700" />
+              <img src={`/images/h-${item*5}.jpeg`} alt="Reel" className="absolute inset-0 h-full w-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-700" />
               <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/90"></div>
               
               {/* Play Button Icon */}
@@ -104,7 +104,7 @@ export default async function HomePage() {
           <h2 className="text-4xl font-serif font-bold text-[#0a2e24] mb-12">Layanan Publik Masjid</h2>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {['Reservasi Ruangan', 'Mualaf Center', 'Fatwa Center', 'Zakat dan Wakaf', 'Reservasi Kunjungan', 'Kerjasama & Bisnis'].map((service, i) => (
+            {['Masjid', 'Janaiz', 'Tahfiz Quran', 'Zakat dan Wakaf', 'Ambulans', 'Koperasi & Bisnis'].map((service, i) => (
               <div key={i} className="bg-white p-8 rounded-3xl shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)] flex flex-col items-start text-left border border-gray-100 hover:shadow-xl transition-shadow">
                 <div className="h-12 w-12 bg-[#f0fdf4] rounded-xl flex items-center justify-center text-[#166534] mb-6">
                   {/* Placeholder for Icons */}
