@@ -1,6 +1,7 @@
 import { supabase } from '@/lib/supabase';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
+import sanitizeHtml from 'sanitize-html';
 
 // 1. Update the type definition so Next.js knows params is a Promise
 export default async function ArticleDetailPage({ 
@@ -28,6 +29,17 @@ export default async function ArticleDetailPage({
     month: 'long',
     year: 'numeric',
   });
+
+  const content = ( htmlContent : string ) => {
+    // Sanitize the HTML before rendering
+    const sanitizedContent = sanitizeHtml(htmlContent, { /* your options */ });
+  
+    return (
+      <div
+        dangerouslySetInnerHTML={{ __html: sanitizedContent }}
+      />
+    );
+  };
 
   return (
     <main className="min-h-screen bg-[#f9fafb] py-20">
@@ -58,7 +70,7 @@ export default async function ArticleDetailPage({
           </h1>
 
           {/* Featured Image */}
-          <div className="relative w-full aspect-[16/9] md:aspect-[21/9] rounded-3xl overflow-hidden shadow-lg border border-gray-100">
+          <div className="relative w-full aspect-[16/9] md:aspect-[16/9] rounded-3xl overflow-hidden shadow-lg border border-gray-100">
             <img 
               src={article.image_url || '/placeholder.jpg'} 
               alt={article.title}
@@ -71,7 +83,7 @@ export default async function ArticleDetailPage({
         {/* Using whitespace-pre-wrap so that standard text line breaks are respected */}
         <div className="bg-white p-8 md:p-12 rounded-3xl shadow-sm border border-gray-100 mb-12">
           <div className="prose prose-lg max-w-none text-gray-700 leading-relaxed whitespace-pre-wrap font-serif">
-            {article.content}
+            {content(article.content)}
           </div>
         </div>
 

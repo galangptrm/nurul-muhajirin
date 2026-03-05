@@ -1,4 +1,5 @@
 import { supabase } from '@/lib/supabase';
+import { stripHtmlTags } from '@/lib/utils';
 import Link from 'next/link';
 
 interface Article {
@@ -161,7 +162,7 @@ export default async function HomePage() {
                   </h3>
                 </Link>
                 <p className="text-gray-600 mb-6 line-clamp-3 leading-relaxed">
-                  {mainArticle.content.substring(0, 180)}...
+                  {stripHtmlTags(mainArticle.content.substring(0, 500))}...
                 </p>
                 <Link href={`/article/${mainArticle.slug}`} className="mt-auto inline-flex items-center text-[#0d9488] font-bold hover:text-[#0f766e] transition-colors">
                   Baca Selengkapnya <span className="ml-2">→</span>
