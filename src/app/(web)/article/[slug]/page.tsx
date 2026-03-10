@@ -2,6 +2,7 @@ import { supabase } from '@/lib/supabase';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import sanitizeHtml from 'sanitize-html';
+import Navbar from '@/components/web/Navbar';
 
 // 1. Update the type definition so Next.js knows params is a Promise
 export default async function ArticleDetailPage({ 
@@ -43,6 +44,7 @@ export default async function ArticleDetailPage({
 
   return (
     <main className="min-h-screen bg-[#f9fafb] py-20">
+      <Navbar/>
       <article className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Breadcrumb / Back Button */}

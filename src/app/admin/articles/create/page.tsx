@@ -4,7 +4,16 @@
 import Link from 'next/link';
 import { useState } from 'react';
 import { createArticle } from '@/actions/article';
-import WysiwygEditor from '@/components/cms/WysiwygEditor';
+import dynamic from 'next/dynamic';
+
+const WysiwygEditor = dynamic(() => import('@/components/cms/WysiwygEditor'), { 
+  ssr: false, // This is the magic flag! It completely disables Server-Side Rendering for this component
+  loading: () => (
+    <div className="h-[300px] w-full bg-gray-50 border border-gray-200 rounded-xl animate-pulse flex items-center justify-center text-gray-400">
+      Memuat Editor...
+    </div>
+  )
+});
 
 export default function CreateArticlePage() {
   const [content, setContent] = useState('');

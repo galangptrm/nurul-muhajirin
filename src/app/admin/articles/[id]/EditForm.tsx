@@ -4,7 +4,16 @@
 import Link from 'next/link';
 import { useState } from 'react';
 import { updateArticle } from '@/actions/article';
-import WysiwygEditor from '@/components/cms/WysiwygEditor';
+import dynamic from 'next/dynamic';
+
+const WysiwygEditor = dynamic(() => import('@/components/cms/WysiwygEditor'), { 
+  ssr: false,
+  loading: () => (
+    <div className="h-[300px] w-full bg-gray-50 border border-gray-200 rounded-xl animate-pulse flex items-center justify-center text-gray-400">
+      Memuat Editor...
+    </div>
+  )
+});
 
 export default function EditForm({ article }: { article: any }) {
   // Initialize the WYSIWYG state with the existing content
