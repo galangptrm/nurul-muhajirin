@@ -4,7 +4,10 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { Facebook, Instagram, Youtube } from 'lucide-react';
+
+import {Facebook, Instagram, Tiktok, Youtube} from '@/components/icons/IconSVG';
+
+// import { Facebook, Instagram, Youtube } from 'lucide-react';
 
 export default function Footer() {
 	const [isScrolled, setIsScrolled] = useState(false);
@@ -24,7 +27,7 @@ export default function Footer() {
 			</div>
 
 			{/* Contact Col */}
-			<div className="md:col-span-5 md:col-start-6">
+			<div className="md:col-span-5 md:col-start-5">
 				<h4 className="text-white font-bold mb-6 uppercase tracking-wider text-sm">Kontak & Lokasi</h4>
 				<ul className="space-y-4 text-sm">
 				<li className="flex items-start">
@@ -43,13 +46,14 @@ export default function Footer() {
 			</div>
 
 			{/* Social Col */}
-			<div className="md:col-span-2">
+			<div className="md:col-span-3">
 				<h4 className="text-white font-bold mb-6 uppercase tracking-wider text-sm">Ikuti Sosial Media</h4>
-				<div className="flex gap-4">
+				<div className="flex gap-2">
 				{/* Placeholders for actual Social Icons */}
-				<a href="#" className="h-10 w-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-[#0d9488] transition-colors"><Instagram/>  </a>
-				<a href="#" className="h-10 w-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-[#0d9488] transition-colors"><Youtube /></a>
-				<a href="#" className="h-10 w-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-[#0d9488] transition-colors"><Facebook /></a>
+				<a href="#" className="h-10 w-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-[#0d9488] transition-colors"><Instagram size={20} color="#ffff"/></a>
+				<a href="#" className="h-10 w-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-[#0d9488] transition-colors"><Youtube size={20} color="#ffff"/></a>
+				<a href="#" className="h-10 w-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-[#0d9488] transition-colors"><Facebook size={20} color="#ffff"/></a>
+				<a href="#" className="h-10 w-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-[#0d9488] transition-colors"><Tiktok size={20} color="#ffff"/></a>
 				</div>
 			</div>
 			</div>
