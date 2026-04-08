@@ -21,6 +21,12 @@ export default async function HomePage() {
 		.eq('is_published', true)
 		.order('created_at', { ascending: false })
 		.limit(5);
+	
+	const { data: petugas_jumat, jumaterror } = await supabase
+		.from('khutbah_profile')
+		.select('*')
+		.eq('id', 1)
+		.single();
 
 		// ADD THIS TEMPORARY CHECK:
 	if (error) {
@@ -189,19 +195,19 @@ export default async function HomePage() {
 				<div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center border-t border-gray-100 pt-10">
 				<div>
 					<p className="text-xs font-bold text-[#0d9488] tracking-widest uppercase mb-2">Khatib</p>
-					<p className="font-bold text-[#0a2e24]">Habib Fulan bin Fulan</p>
+					<p className="font-bold text-[#0a2e24]">{petugas_jumat.khotib}</p>
 				</div>
 				<div>
-					<p className="text-xs font-bold text-[#0d9488] tracking-widest uppercase mb-2">Imam 1</p>
-					<p className="font-bold text-[#0a2e24]">H. Ahmad Fulan, SQ., MA.</p>
+					<p className="text-xs font-bold text-[#0d9488] tracking-widest uppercase mb-2">Imam</p>
+					<p className="font-bold text-[#0a2e24]">{petugas_jumat.imam}</p>
 				</div>
 				<div>
-					<p className="text-xs font-bold text-[#0d9488] tracking-widest uppercase mb-2">Muadzin 1</p>
-					<p className="font-bold text-[#0a2e24]">Ust. Ilham, SQ</p>
+					<p className="text-xs font-bold text-[#0d9488] tracking-widest uppercase mb-2">Muadzin</p>
+					<p className="font-bold text-[#0a2e24]">{petugas_jumat.muadzin}</p>
 				</div>
 				<div>
-					<p className="text-xs font-bold text-[#0d9488] tracking-widest uppercase mb-2">Muadzin 2</p>
-					<p className="font-bold text-[#0a2e24]">H. Raden Fulan, S.Q.</p>
+					<p className="text-xs font-bold text-[#0d9488] tracking-widest uppercase mb-2">Bilal</p>
+					<p className="font-bold text-[#0a2e24]">{petugas_jumat.bilal}</p>
 				</div>
 				</div>
 			</div>
