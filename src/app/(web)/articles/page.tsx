@@ -54,7 +54,7 @@ export default async function ArticlesPage({
 									{/* Image Banner */}
 									<div className="relative aspect-[16/9] overflow-hidden bg-gray-100">
 										<img 
-											src={article.image_url || '/placeholder.jpg'} 
+											src={article.image_url} 
 											alt={article.title}
 											className="absolute inset-0 h-full w-full object-cover group-hover:scale-105 transition-transform duration-700 ease-in-out"
 										/>
