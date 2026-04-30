@@ -14,10 +14,10 @@ export default function ServiceDetail() {
 							Yayasana Nurul Muhajirin
 						</span>
 						<h1 className="text-5xl font-serif font-bold text-[#0a2e24] mb-6 leading-tight">
-							Layanan <br /> Ambulans
+							Zakat <br /> & Infaq
 						</h1>
 						<p className="text-gray-600 text-lg mb-10 leading-relaxed max-w-lg">
-							Menyediakan layanan antar-jemput Ambulans untuk warga Wahana Pondok Gede
+							Menyalurkan amanah zakat dan infaq anda
 						</p>
 
 						{/* Feature Cards (Stacked) */}
@@ -56,7 +56,7 @@ export default function ServiceDetail() {
 					<div className="grid grid-cols-2 gap-4">
 						<div className="col-span-2 relative h-[350px] rounded-[40px] overflow-hidden shadow-2xl">
 							<Image
-								src="/images/layanan/ambulans-1.jpg"
+								src="/images/layanan/infaq-1.jpg"
 								alt="Main Service"
 								fill
 								className="object-cover"
@@ -64,7 +64,7 @@ export default function ServiceDetail() {
 						</div>
 						<div className="relative h-[200px] rounded-[30px] overflow-hidden shadow-xl">
 							<Image
-								src="/images/layanan/ambulans-2.jpg"
+								src="/images/layanan/infaq-2.jpg"
 								alt="Activity"
 								fill
 								className="object-coverages/"
@@ -72,7 +72,7 @@ export default function ServiceDetail() {
 						</div>
 						<div className="relative h-[200px] rounded-[30px] overflow-hidden shadow-xl">
 							<Image
-								src="/images/layanan/ambulans-3.jpg"
+								src="/images/layanan/infaq-3.jpg"
 								alt="Activity"
 								fill
 								className="object-cover"
