@@ -91,10 +91,11 @@ export default function JadwalSholat({ initialData }: { initialData: PrayerTimes
 
                 pray.active = true;
                 nextPrayer = pray;
-                break;
+				
+                return prayers;
             }
 
-            if (nextPrayer.name == '-') {
+            if (!nextPrayer.name) {
                 prayers[4].active = true
                 nextPrayer = prayers[4]
             }
