@@ -1,4 +1,4 @@
-// src/components/web/Navbar.tsx
+// src/components/web/Footer.tsx
 'use client';
 
 import moment from "moment";
@@ -7,7 +7,7 @@ import {Facebook, Instagram, Tiktok, Youtube} from '@/components/icons/IconSVG';
 export default function Footer() {
 
 	return (
-		<footer className="bg-[#051f18] text-gray-300 pt-20 pb-10 border-t border-white/5">
+		<footer data-testid="footer" className="bg-[#051f18] text-gray-300 pt-20 pb-10 border-t border-white/5">
 			<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-12 gap-12">
 			{/* Brand/Logo Col */}
 			<div className="md:col-span-4">
@@ -28,10 +28,10 @@ export default function Footer() {
 				</li>
 				<li className="flex items-center">
 					<span className="mr-3 text-[#eab308]">📞</span>
-					<span>+ 6213811798</span>
+					<span data-testid="footer-phone">+ 6213811798</span>
 				</li>
 				<li className="flex items-center">
-					<a href="mailto:nurulmuhajirin.yayasan@gmail.com">
+					<a href="mailto:nurulmuhajirin.yayasan@gmail.com" title="Kirim email ke Yayasan Nurul Muhajirin" data-testid="footer-email">
 						<span className="mr-3 text-[#eab308]">✉️</span>
 						<span>nurulmuhajirin.yayasan@gmail.com</span>
 					</a>
@@ -44,10 +44,10 @@ export default function Footer() {
 				<h4 className="text-white font-bold mb-6 uppercase tracking-wider text-sm">Ikuti Sosial Media</h4>
 				<div className="flex gap-2">
 				{/* Placeholders for actual Social Icons */}
-				<a href="https://www.instagram.com/nurulmuhajirin.official/" target="_blank" rel="noopener noreferrer" className="h-10 w-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-[#0d9488] transition-colors"><Instagram size={20} color="#ffff"/></a>
-				<a href="https://www.youtube.com/@NurulMuhajirin.official" target="_blank" rel="noopener noreferrer" className="h-10 w-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-[#0d9488] transition-colors"><Youtube size={20} color="#ffff"/></a>
-				<a href="https://www.facebook.com/profile.php?id=61585975660877" target="_blank" rel="noopener noreferrer" className="h-10 w-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-[#0d9488] transition-colors"><Facebook size={20} color="#ffff"/></a>
-				<a href="https://www.tiktok.com/@nurulmuhajirin.official" target="_blank" rel="noopener noreferrer" className="h-10 w-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-[#0d9488] transition-colors"><Tiktok size={20} color="#ffff"/></a>
+				<a href="https://www.instagram.com/nurulmuhajirin.official/" target="_blank" rel="noopener noreferrer" aria-label="Instagram Nurul Muhajirin" title="Ikuti kami di Instagram" data-testid="footer-social-instagram" className="h-10 w-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-[#0d9488] transition-colors"><Instagram size={20} color="#ffff"/></a>
+				<a href="https://www.youtube.com/@NurulMuhajirin.official" target="_blank" rel="noopener noreferrer" aria-label="YouTube Nurul Muhajirin" title="Ikuti kami di YouTube" data-testid="footer-social-youtube" className="h-10 w-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-[#0d9488] transition-colors"><Youtube size={20} color="#ffff"/></a>
+				<a href="https://www.facebook.com/profile.php?id=61585975660877" target="_blank" rel="noopener noreferrer" aria-label="Facebook Nurul Muhajirin" title="Ikuti kami di Facebook" data-testid="footer-social-facebook" className="h-10 w-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-[#0d9488] transition-colors"><Facebook size={20} color="#ffff"/></a>
+				<a href="https://www.tiktok.com/@nurulmuhajirin.official" target="_blank" rel="noopener noreferrer" aria-label="TikTok Nurul Muhajirin" title="Ikuti kami di TikTok" data-testid="footer-social-tiktok" className="h-10 w-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-[#0d9488] transition-colors"><Tiktok size={20} color="#ffff"/></a>
 				</div>
 			</div>
 			</div>

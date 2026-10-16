@@ -20,10 +20,24 @@ export default function VideoCard({ video }: { video: any }) {
 	return (
 		<div 
 			onClick={togglePlay} 
+			onKeyDown={(e) => {
+				if (e.key === 'Enter' || e.key === ' ') {
+					e.preventDefault();
+					togglePlay();
+				}
+			}}
+			role="button"
+			tabIndex={0}
+			aria-label={`${isPlaying ? 'Jeda' : 'Putar'} video: ${video.title}`}
+			aria-pressed={isPlaying}
+			title={video.title}
+			data-testid="video-card"
+			data-playing={isPlaying}
 			className="group relative aspect-[9/16] bg-gray-900 rounded-2xl overflow-hidden cursor-pointer shadow-lg"
 		>
 			<video 
 				ref={videoRef}
+				data-testid="video-player"
 				src={`${video.video_file_url}#t=0.1`} 
 				preload="metadata"
 				className={`absolute inset-0 h-full w-full object-cover transition-transform duration-700 ${
@@ -36,7 +50,7 @@ export default function VideoCard({ video }: { video: any }) {
 			<div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/90"></div>
 			
 			{!isPlaying && (
-				<div className="absolute inset-0 flex items-center justify-center">
+				<div data-testid="video-play-icon" className="absolute inset-0 flex items-center justify-center">
 					<div className="h-12 w-12 bg-white/30 backdrop-blur-sm rounded-full flex items-center justify-center group-hover:bg-white/50 transition">
 						<div className="w-0 h-0 border-t-8 border-t-transparent border-l-[12px] border-l-white border-b-8 border-b-transparent ml-1"></div>
 					</div>
@@ -44,7 +58,7 @@ export default function VideoCard({ video }: { video: any }) {
 			)}
 
 			<div className="absolute bottom-0 left-0 p-4 w-full">
-				<h3 className="text-white text-sm font-semibold line-clamp-2">
+				<h3 data-testid="video-title" className="text-white text-sm font-semibold line-clamp-2">
 					{video.title}
 				</h3>
 			</div>

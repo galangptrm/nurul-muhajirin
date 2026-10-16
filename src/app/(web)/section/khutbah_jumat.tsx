@@ -28,7 +28,7 @@ export default async function SectionKhutbahJumat() {
 	}
 
 	return (
-		<section className="py-20 bg-[#f8fafc]">
+		<section data-testid="section-petugas-jumat" className="py-20 bg-[#f8fafc]">
 			<div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
 			<div className="text-center mb-12">
 				<h2 className="text-3xl font-serif font-bold text-[#0a2e24]">Petugas Jumat Masjid Pekan Ini</h2>
@@ -39,7 +39,7 @@ export default async function SectionKhutbahJumat() {
 				<span className="bg-[#fef08a] text-[#854d0e] text-sm font-bold px-4 py-1.5 rounded-full mb-4 inline-block">
 					Tanggal
 				</span>
-				<h3 className="text-2xl md:text-3xl font-serif font-bold text-[#0a2e24]">
+				<h3 data-testid="petugas-jumat-date" className="text-2xl md:text-3xl font-serif font-bold text-[#0a2e24]">
 					{getNextFriday()}
 				</h3>
 				</div>
@@ -47,19 +47,19 @@ export default async function SectionKhutbahJumat() {
 				<div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center border-t border-gray-100 pt-10">
 				<div>
 					<p className="text-xs font-bold text-[#0d9488] tracking-widest uppercase mb-2">Khatib</p>
-					<p className="font-bold text-[#0a2e24]">{petugas_jumat.khotib}</p>
+					<p data-testid="petugas-jumat-khatib" className="font-bold text-[#0a2e24]">{petugas_jumat?.khotib ?? '-'}</p>
 				</div>
 				<div>
 					<p className="text-xs font-bold text-[#0d9488] tracking-widest uppercase mb-2">Imam</p>
-					<p className="font-bold text-[#0a2e24]">{petugas_jumat.imam}</p>
+					<p data-testid="petugas-jumat-imam" className="font-bold text-[#0a2e24]">{petugas_jumat?.imam ?? '-'}</p>
 				</div>
 				<div>
 					<p className="text-xs font-bold text-[#0d9488] tracking-widest uppercase mb-2">Muadzin</p>
-					<p className="font-bold text-[#0a2e24]">{petugas_jumat.muadzin}</p>
+					<p data-testid="petugas-jumat-muadzin" className="font-bold text-[#0a2e24]">{petugas_jumat?.muadzin ?? '-'}</p>
 				</div>
 				<div>
 					<p className="text-xs font-bold text-[#0d9488] tracking-widest uppercase mb-2">Bilal</p>
-					<p className="font-bold text-[#0a2e24]">{petugas_jumat.bilal}</p>
+					<p data-testid="petugas-jumat-bilal" className="font-bold text-[#0a2e24]">{petugas_jumat?.bilal ?? '-'}</p>
 				</div>
 				</div>
 			</div>

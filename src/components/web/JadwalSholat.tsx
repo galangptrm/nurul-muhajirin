@@ -121,15 +121,15 @@ export default function JadwalSholat({ initialData }: { initialData: PrayerTimes
 			</h2>
 
             {nextPrayer &&
-                <div className="bg-[#114638] rounded-full px-6 py-2 inline-flex flex-col border border-white/10 ">
-                    <span className="text-xs text-gray-300 uppercase tracking-wider">Menuju {nextPrayer.name}</span>
-                    <span className="text-xl font-bold text-white">{timeLeft.hours}:{timeLeft.minutes}:{timeLeft.seconds}</span>
+                <div data-testid="prayer-countdown" className="bg-[#114638] rounded-full px-6 py-2 inline-flex flex-col border border-white/10 ">
+                    <span data-testid="prayer-next-name" className="text-xs text-gray-300 uppercase tracking-wider">Menuju {nextPrayer.name}</span>
+                    <span data-testid="prayer-countdown-timer" className="text-xl font-bold text-white">{timeLeft.hours}:{timeLeft.minutes}:{timeLeft.seconds}</span>
                 </div>
             }
 			
 			<div className="flex flex-col items-center justify-center mb-10">
 				{/* Displaying the Hijri Date using the new interface structure */}
-				<p className="text-[#eab308] font-semibold mt-4">
+				<p data-testid="prayer-date" className="text-[#eab308] font-semibold mt-4">
 					{prayerTimes.date.readable} <br />
 					{prayerTimes.date.hijri.day} {prayerTimes.date.hijri.month.en} {prayerTimes.date.hijri.year} H
 				</p>
@@ -137,14 +137,18 @@ export default function JadwalSholat({ initialData }: { initialData: PrayerTimes
 
 			<div className="grid grid-cols-2 md:grid-cols-5 gap-4 max-w-5xl mx-auto">
 				{prayersData.map((prayer) => (
-					<div key={prayer.name} className={`text-white p-6 rounded-2xl border border-white/10 ${
+					<div 
+					key={prayer.name} 
+					data-testid={`prayer-card-${prayer.name.toLowerCase()}`}
+					data-active={prayer.active}
+					className={`text-white p-6 rounded-2xl border border-white/10 ${
                         prayer.active 
                         ? 'bg-[#eab308] text-[#0a2e24] scale-105 shadow-xl font-bold' 
                         : 'bg-[#114638] text-white border border-white/10 hover:bg-[#155a48]'
                     }`}>
 						<span className={`text-xs block mb-2 
                             ${prayer.active ? 'text-[#854d0e]' : 'text-gray-300'}`}>{prayer.name}</span>
-						<span className="text-3xl font-bold">{prayer.time}</span>
+						<span data-testid={`prayer-time-${prayer.name.toLowerCase()}`} className="text-3xl font-bold">{prayer.time}</span>
 					</div>
 				))}
 			</div>

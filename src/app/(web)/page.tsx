@@ -5,17 +5,20 @@ import SectionShorts from "@/app/(web)/section/video_shorts";
 import SectionArticles from "@/app/(web)/section/latest_articles";
 import SectionKhutbahJumat from "@/app/(web)/section/khutbah_jumat";
 import SectionJadwalSholat from "@/app/(web)/section/jadwal_sholat";
+import ContactForm from "@/components/web/ContactForm";
 
 export default async function HomePage() {
 
 	return (
 		<main className="min-h-screen bg-[#f9fafb]">
 		{/* 1. Header Banner with Video */}
-		<section className="relative h-screen w-full overflow-hidden bg-[#0a2e24]">
+		<section data-testid="hero" className="relative h-screen w-full overflow-hidden bg-[#0a2e24]">
 			<video 
 			autoPlay 
 			loop 
 			muted 
+			aria-hidden="true"
+			data-testid="hero-video"
 			className="absolute inset-0 h-full w-full object-cover opacity-40 mix-blend-overlay"
 			>
 			<source src={`/videos/masjid_tiny.mp4`} type="video/mp4"/>
@@ -25,14 +28,14 @@ export default async function HomePage() {
 				<p className="text-[#eab308] tracking-widest text-sm font-semibold mb-4 uppercase">
 				— DKM Al Muhajirin
 				</p>
-				<h1 className="text-5xl md:text-7xl font-serif font-bold text-white mb-4 leading-tight">
+				<h1 data-testid="hero-title" className="text-5xl md:text-7xl font-serif font-bold text-white mb-4 leading-tight">
 				Yayasan <br />
 				<span className="text-[#5eead4]">Nurul Muhajirin,</span>
 				</h1>
 				<p className="text-lg text-gray-200 mb-8 leading-relaxed">
 				Selamat datang di Masjid Al Muhajirin, pusat moderasi beragama di Perum Wahana Pondok Gede. Merajut ukhuwah, menebar kedamaian untuk seluruh alam.
 				</p>
-				<Link href="#services" className="inline-flex items-center bg-[#0d9488] hover:bg-[#0f766e] text-white px-8 py-3 rounded-full font-semibold transition-colors">
+				<Link href="#services" title="Lihat layanan publik masjid" data-testid="hero-cta" className="inline-flex items-center bg-[#0d9488] hover:bg-[#0f766e] text-white px-8 py-3 rounded-full font-semibold transition-colors">
 				Eksplorasi Layanan <span className="ml-2">→</span>
 				</Link>
 			</div>
@@ -53,6 +56,9 @@ export default async function HomePage() {
 
 		{/* 5. Petugas Jum'at Pekan Ini */}
 		<SectionKhutbahJumat/>
+
+		{/* 7. Contact Form (Hubungi Kami) */}
+		<ContactForm/>
 		
 		</main>
 	);

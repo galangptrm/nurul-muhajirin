@@ -15,7 +15,7 @@ export default async function SectionJadwalSholat() {
 		if (response.data.status === 'success') {
 			// Pass the server-fetched data to the Client Component
 			return (
-				<section className="py-16 bg-[#0a2e24] border-t-4 border-[#eab308]">
+				<section data-testid="section-prayer-times" className="py-16 bg-[#0a2e24] border-t-4 border-[#eab308]">
 					<JadwalSholat initialData={response.data.data} />
 				</section>
 			);

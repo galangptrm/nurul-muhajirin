@@ -13,7 +13,7 @@ export default async function SectionShorts() {
 	}
 
 	return (
-		<section className="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 bg-white">
+		<section data-testid="section-videos" className="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 bg-white">
 			<div className="flex justify-between items-end mb-8">
 				<div>
 					<h2 className="text-3xl font-serif font-bold text-[#0a2e24] mb-2">Video Terkini</h2>
