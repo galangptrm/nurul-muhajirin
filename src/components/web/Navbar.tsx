@@ -54,7 +54,7 @@ const navClasses = isScrolled || !isHomepage || isMobileMenuOpen
 
 				{/* Desktop Menu */}
 				<div className="hidden md:flex items-center space-x-8 drop-shadow-md">
-					<Link href="/" className="text-white hover:text-[#eab308] text-sm font-semibold uppercase tracking-wider transition-colors">
+					<Link href="/" className="text-white hover:text-[#eab308] text-sm font-semibold tracking-wider transition-colors">
 					Beranda
 					</Link>
 					<Link href="#services" className="text-gray-200 hover:text-[#eab308] text-sm font-medium transition-colors">
@@ -63,13 +63,13 @@ const navClasses = isScrolled || !isHomepage || isMobileMenuOpen
 					<Link href="/articles" className="text-gray-200 hover:text-[#eab308] text-sm font-medium transition-colors">
 					Berita
 					</Link>
-					<Link href="/admin" className="text-gray-200 hover:text-[#eab308] text-sm font-medium transition-colors">
+					{/* <Link href="/admin" className="text-gray-200 hover:text-[#eab308] text-sm font-medium transition-colors">
 					Profil
-					</Link>
+					</Link> */}
 					
-					<Link href="#zakat" className="bg-[#eab308] hover:bg-[#ca8a04] text-[#0a2e24] px-5 py-2 rounded-full text-sm font-bold transition-colors shadow-lg">
+					{/* <Link href="#zakat" className="bg-[#eab308] hover:bg-[#ca8a04] text-[#0a2e24] px-5 py-2 rounded-full text-sm font-bold transition-colors shadow-lg">
 					Zakat & Infaq
-					</Link>
+					</Link> */}
 				</div>
 
 				{/* Mobile Menu Button */}
@@ -103,23 +103,23 @@ const navClasses = isScrolled || !isHomepage || isMobileMenuOpen
 				}`}
 			>
 				<div className="px-4 pt-4 pb-8 space-y-2 flex flex-col">
-				<Link href="/" className="block px-4 py-3 text-white hover:bg-white/10 hover:text-[#eab308] rounded-lg font-semibold uppercase tracking-wider text-sm transition-colors">
-					Beranda
-				</Link>
-				<Link href="#services" className="block px-4 py-3 text-gray-200 hover:bg-white/10 hover:text-[#eab308] rounded-lg font-medium text-base transition-colors">
-					Layanan
-				</Link>
-				<Link href="/articles" className="block px-4 py-3 text-gray-200 hover:bg-white/10 hover:text-[#eab308] rounded-lg font-medium text-base transition-colors">
-					Berita
-				</Link>
-				<Link href="/admin" className="block px-4 py-3 text-gray-200 hover:bg-white/10 hover:text-[#eab308] rounded-lg font-medium text-base transition-colors">
-					Profil
-				</Link>
-				<div className="pt-4 pb-2 px-4">
-					<Link href="#zakat" className="block w-full text-center bg-[#eab308] hover:bg-[#ca8a04] text-[#0a2e24] px-5 py-3 rounded-full text-sm font-bold transition-colors shadow-lg">
-					Zakat & Infaq
+					<Link href="/" className="block px-4 py-3 text-white hover:bg-white/10 hover:text-[#eab308] rounded-lg font-semibold uppercase tracking-wider text-sm transition-colors">
+						Beranda
 					</Link>
-				</div>
+					<Link href="#services" className="block px-4 py-3 text-gray-200 hover:bg-white/10 hover:text-[#eab308] rounded-lg font-medium text-base transition-colors">
+						Layanan
+					</Link>
+					<Link href="/articles" className="block px-4 py-3 text-gray-200 hover:bg-white/10 hover:text-[#eab308] rounded-lg font-medium text-base transition-colors">
+						Berita
+					</Link>
+					{/* <Link href="/admin" className="block px-4 py-3 text-gray-200 hover:bg-white/10 hover:text-[#eab308] rounded-lg font-medium text-base transition-colors">
+						Profil
+					</Link> */}
+					{/* <div className="pt-4 pb-2 px-4">
+						<Link href="#zakat" className="block w-full text-center bg-[#eab308] hover:bg-[#ca8a04] text-[#0a2e24] px-5 py-3 rounded-full text-sm font-bold transition-colors shadow-lg">
+						Zakat & Infaq
+						</Link>
+					</div> */}
 				</div>
 			</div>
 		</nav>
